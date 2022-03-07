@@ -9,7 +9,7 @@ include_once("../model/usuarioModel.php");
 
 <div class="centroform">
 
-<form action="#" method="Post" class="row row-cols-lg-auto g-3 align-items-center">
+<form action="#" method="POST" class="row row-cols-lg-auto g-3 align-items-center">
   <div class="col-12">
     <label class="visually-hidden" for="inlineFormInputGroupUsername">Nome do usuario</label>
     <div class="input-group">
@@ -32,6 +32,8 @@ include_once("../model/usuarioModel.php");
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
       <th scope="col">Fone</th>
+      <th scope="col">Alterar</th>
+      <th scope="col">Excluir</th>
     </tr>
   </thead>
   <tbody>
@@ -50,6 +52,14 @@ foreach($dado as $emailUsuarios):
       <td><?=$emailUsuarios["nomeusu"] ?></td>
       <td><?=$emailUsuarios["emailusu"] ?></td>
       <td><?=$emailUsuarios["foneusu"] ?></td>
+
+      <td><form action="../view/alterarform.php" method="POST">
+        <input type="hidden" value=" <?=$emailUsuarios["idusu"] ?>" name="codigousu" >
+        <button type="submit" class="btn btn-primary">Alterar</button>
+</form>
+
+      </td>
+      <td><?=$emailUsuarios["idusu"] ?></td>
     </tr>
     <?php
       endforeach;
