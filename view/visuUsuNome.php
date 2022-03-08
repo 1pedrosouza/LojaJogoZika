@@ -32,6 +32,8 @@ include_once("../model/usuarioModel.php");
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
       <th scope="col">Fone</th>
+      <th scope="col">Alterar</th>
+      <th scope="col">Excluir</th>
     </tr>
   </thead>
   <tbody>
@@ -40,15 +42,23 @@ $nomeusu = isset ($_POST["nomeUsu"])? $_POST["nomeUsu"]:"" ;
 
 if($nomeusu){
 
-$dado = visuUsuarioNome($conn,$nomeusu);
+$dados = visuUsuarioNome($conn,$nomeusu);
 
-foreach($dado as $nomeUsuarios): 
+foreach($dados as $nomeUsuarios): 
 ?>
     <tr>
       <th scope="row"><?=$nomeUsuarios["idusu"] ?></th>
       <td><?=$nomeUsuarios["nomeusu"] ?></td>
       <td><?=$nomeUsuarios["emailusu"] ?></td>
       <td><?=$nomeUsuarios["foneusu"] ?></td>
+      <td><form action="../view/alterarform.php" method="POST">
+        <input type="hidden" value=" <?=$nomeUsuarios["idusu"] ?>" name="codigousu" >
+        <button type="submit" class="btn btn-primary">Alterar</button>
+</form>
+
+      </td>
+      <td><?=$nomeUsuarios["idusu"] ?></td>
+    </tr>
     </tr>
     <?php
       endforeach;

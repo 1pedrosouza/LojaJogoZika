@@ -43,9 +43,9 @@ $emailusu = isset ($_POST["emailUsu"])? $_POST["emailUsu"]:"" ;
 if($emailusu){
 
 
-$dado = visuUsuarioEmail($conn, $emailusu);
+$dados = visuUsuarioEmail($conn, $emailusu);
 
-foreach($dado as $emailUsuarios): 
+foreach($dados as $emailUsuarios): 
 ?>
     <tr>
       <th scope="row"><?=$emailUsuarios["idusu"] ?></th>
