@@ -14,7 +14,7 @@ include_once("../model/usuarioModel.php");
     <label class="visually-hidden" for="inlineFormInputGroupUsername">Nome do usuario</label>
     <div class="input-group">
       <div class="input-group-text">Código</div>
-      <input type="text" name="idusu" class="form-control" id="inlineFormInputGroupUsername" placeholder="Código do Usuario">
+      <input type="number" name="idusu" class="form-control" id="inlineFormInputGroupUsername" placeholder="Código do Usuario">
     </div>
   </div>
 
@@ -57,7 +57,9 @@ if($codigousu){
 </form>
 
       </td>
-      <td><?=$codigoUsuarios["idusu"] ?></td>
+      <td><button type="button" class="btn btn-danger" codigo="<?=$codigoUsuarios["idusu"] ?>" email="" data-bs-toggle="modal" data-bs-target="#deleteModal">
+  Apagar
+</button></td>
     </tr>
     <?php
 
@@ -67,6 +69,26 @@ if($codigousu){
 </table>
 
 </div>
+
+<div class="modal fade" id="deleteModal"tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModal">Exclusão de Usuário</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-primary">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <?php
 
