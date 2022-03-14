@@ -59,9 +59,9 @@ foreach($dados as $emailUsuarios):
 </form>
 
       </td>
-      <td> <td><button type="button" class="btn btn-danger" codigo="<?=$emailUsuarios["idusu"] ?>" email="<?=$emailUsuarios["emailusu"] ?>"  data-bs-toggle="modal" data-bs-target="#deleteModal">
+     <td><button type="button" class="btn btn-danger" codigo="<?=$emailUsuarios["idusu"] ?>" email="<?=$emailUsuarios["emailusu"] ?>"  data-bs-toggle="modal" data-bs-target="#deleteModal">
   Apagar
-</button></td></td>
+</button></td>
     </tr>
     <?php
       endforeach;
@@ -103,7 +103,7 @@ foreach($dados as $emailUsuarios):
           var email = button.getAttribute('email');
 
           var modalBody = deleteUsuarioModal.querySelector('.modal-body');
-          modalBody.textContent = 'Gostaria de excluir o E-mail ' + email +'?';
+          modalBody.textContent = 'Gostaria de excluir o Usuário ' + email +'?';
 
           var Codigo = deleteUsuarioModal.querySelector('.modal-footer .codigo');
           Codigo.value = codigo;

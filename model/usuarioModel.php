@@ -41,8 +41,8 @@ $tipousu,$cepusu,$numusu,$compleusu){
 }
 
 function deletarUsuario($conn, $codigousu){
-    $query = "delete tbusuario where idusu='{$codigousu}'";
-    $resultado = mysqli_query($conn,$query);
+    $query = "delete from tbusuario where idusu = {$codigousu}";
+    $resultado = mysqli_query($conn, $query);
     return $resultado;
 }
 

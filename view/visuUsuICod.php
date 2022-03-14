@@ -57,7 +57,7 @@ if($codigousu){
 </form>
 
       </td>
-      <td><button type="button" class="btn btn-danger" codigo="<?=$codigoUsuarios["idusu"] ?>" email="" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      <td><button type="button" class="btn btn-danger" codigo="<?=$codigoUsuarios["idusu"] ?>" nome="<?=$codigoUsuarios["nomeusu"] ?>" data-bs-toggle="modal" data-bs-target="#deleteModal">
   Apagar
 </button></td>
     </tr>
@@ -70,7 +70,7 @@ if($codigousu){
 
 </div>
 
-<div class="modal fade" id="deleteModal"tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -81,12 +81,35 @@ if($codigousu){
         ...
       </div>
       <div class="modal-footer">
+      <form action="../controler/deletarUsuario.php" method="GET">
+        <input type="hidden" class="codigo form-control" name="codigousu" >
+        <button type="submit" class="btn btn-danger">Sim</button>
+</form>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+       
       </div>
     </div>
   </div>
 </div>
+
+
+<script>
+    var deleteUsuarioModal = document.getElementById('deleteModal');
+        deleteUsuarioModal.addEventListener('show.bs.modal',function(event){
+          var button = event.relatedTarget;
+          var codigo = button.getAttribute('codigo');
+          var nome = button.getAttribute('nome');
+
+          var modalBody = deleteUsuarioModal.querySelector('.modal-body');
+          modalBody.textContent = 'Gostaria de excluir o Usuário ' + nome +'?';
+
+          var Codigo = deleteUsuarioModal.querySelector('.modal-footer .codigo');
+          Codigo.value = codigo;
+        })
+
+
+
+  </script>
 
 
 
