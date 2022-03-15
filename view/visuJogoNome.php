@@ -37,7 +37,7 @@ include_once("../model/jogoModel.php");
   </thead>
   <tbody>
   <?php
-$nomejogo = isset ($_POST["nomeJogo"])? $_POST["nomeJogo"]:"" ;
+$nomejogo = isset ($_POST["nomejogo"])? $_POST["nomejogo"]:"" ;
 
 if($nomejogo){
 

@@ -3,7 +3,7 @@
     include_once("../model/jogoModel.php");
     
     
-    $nome = $_POST["jogoUsu"];
+    $nome = $_POST["nomejogo"];
     
     if(visuJogoNome($conn, $nomejogo)){
         header("Location:../view/visuJogoNome.php");
